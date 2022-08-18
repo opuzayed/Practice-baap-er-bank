@@ -14,9 +14,9 @@ document.getElementById('btn-submit').addEventListener('click', function(){
 //check condition
     if(email == 'opu@email.com' && password == '12345')
     {
-        console.log('valid user');
+       window.location.href = 'bank.html';
     }
     else{
-        console.log('invalid user');
+        alert('Please type valid password');
     }
 })
