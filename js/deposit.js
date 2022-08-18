@@ -3,10 +3,18 @@ document.getElementById('btn-deposit').addEventListener('click', function(){
    //get the deposit amount from the deposit input field
    //for input field use .value to get the value into the deposit input field
    const depositField = document.getElementById('deposit-field');
-   const depositAmount = depositField.value;
+   const newDepositAmountString = depositField.value;
+   const newDepositAmount = parseFloat(newDepositAmountString);
    //get the current deposit total
    const depositTotalElement = document.getElementById('deposit-total');
-   const depositTotal = depositTotalElement.innerText;
-   depositTotalElement.innerText = depositAmount;
+   const previousDepositTotalString = depositTotalElement.innerText;
+   const previousDepositTotal = parseFloat(previousDepositTotalString);
+    //add numbers to set the total deposit
+   const currentDepositTotal = previousDepositTotal + newDepositAmount;
+
+   depositTotalElement.innerText = currentDepositTotal;
+
+
+   depositField.value = '';
    
 })
